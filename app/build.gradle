@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "ibs.ctdm.chromecustomtab"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    //app compat
+    compile 'com.android.support:appcompat-v7:23.1.1'
+
+    //support design
+    compile "com.android.support:design:23.1.1"
+
+    //chrome custom tabs
+    compile 'com.android.support:customtabs:23.1.1'
+
+    //multitask management
+    compile 'io.reactivex:rxandroid:1.1.0'
+}
